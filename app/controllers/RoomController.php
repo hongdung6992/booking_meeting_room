@@ -6,8 +6,8 @@ class RoomController extends Controller {
 
     if (!$_SESSION['login']) $this->redirect('login', 'index');
 
-    $this->view('layouts/master', [
-      'page' => 'admin/meeting_room/index'
+    $this->view('admin/layouts/master', [
+      'page' => 'room/index'
     ]);
 
     $this->destroySession();

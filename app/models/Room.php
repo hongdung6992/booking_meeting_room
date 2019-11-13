@@ -9,4 +9,11 @@ class Room extends Database {
     return $this->connection->query($sql);
   }
 
+  function getRoomById($id){
+    if($id !== null){
+      $sql = "SELECT * FROM " . $this->table . " WHERE id = " . $id;
+      return $this->connection->query($sql);
+    }
+  }
+
 }
