@@ -7,13 +7,13 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <li class="nav-item has-treeview">
           <a href="<?= ROOT_URL ?>/room/index" class="nav-link">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
+            <i class="nav-icon fab fa-elementor"></i>
             <p>Rooms</p>
           </a>
         </li>
         <li class="nav-item has-treeview">
           <a href="<?= ROOT_URL ?>/booking/list" class="nav-link">
-            <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="nav-icon fab fa-bootstrap"></i>
             <p>Bookings</p>
           </a>
         </li>

@@ -44,14 +44,30 @@
           <div class="col-12 p-0 float-right">
             <input type="submit" class="btn btn-primary btn-block btn-flat" name="sign_in" value="Sign In">
           </div>
+        </form>
       </div>
-      </form>
+    </div>
+    <div class="card card-info">
+      <div class="card-header">
+        <h3 class="card-title">Account</h3>
+      </div>
+      <div class="card-body account-demo">
+        <div class="account-group row">
+          <div class="col-md-10 p-0">
+            <p class="mb-0 email">Email: admin@gmail.com</p>
+            <p class="mb-0 password">Password: 123123</p>
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-info p-1 copy">Copy</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   </div>
 
   <?php include_once './app/views/shared/_js.php' ?>
-  
+  <?php include_once 'demo.php'?>
 </body>
 
 </html>
