@@ -37,4 +37,9 @@ class LoginController extends Controller
     }
   }
 
+  public function logout()
+  {
+    if (isset($_SESSION['login']))  unset($_SESSION['login']);
+    $this->redirect('login', 'index');
+  }
 }

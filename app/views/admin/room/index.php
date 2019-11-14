@@ -1,3 +1,4 @@
+<?php include_once '_count.php' ?>
 <div class="row">
   <div class="col-12">
     <div class="card">
@@ -8,25 +9,16 @@
         <table id="example1" class="table table-bordered table-striped">
           <thead>
             <tr>
-              <th>Image</th>
-              <th>Room</th>
-              <th>Capacity</th>
-              <th>Bookings</th>
-              <th>Status</th>
-              <th>Action</th>
+              <th class="text-center">No.</th>
+              <th class="text-center">Image</th>
+              <th class="text-center">Room</th>
+              <th class="text-center">Capacity</th>
+              <th class="text-center">Bookings</th>
+              <th class="text-center">Status</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Trident</td>
-              <td>Internet
-                Explorer 4.0
-              </td>
-              <td>Win 95+</td>
-              <td> 4</td>
-              <td>X</td>
-              <td></td>
-            </tr>
+            <?php include_once '_tbody.php' ?>
           </tbody>
         </table>
       </div>

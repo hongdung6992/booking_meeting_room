@@ -3,6 +3,7 @@
     <div class="col-md-12 d-flex align-items-center mt-3 bg-purple rounded">
       <div class="w-100 p-3 shadow-sm bg-dark">
         <h1 class="mb-0lh-100 text-white">Detail about your booking</h1>
+        <p class="text-white">Click "Confirm" button to booking</p>
       </div>
     </div>
 

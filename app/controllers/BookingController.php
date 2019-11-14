@@ -61,4 +61,83 @@ class BookingController extends Controller
       'status'    => $input['status'],
     ];
   }
+
+  // list all bookings
+  public function list($id = null)
+  {
+    if (!$_SESSION['login']) $this->redirect('login', 'index');
+
+    $this->view('admin/layouts/master', [
+      'page' => '/booking/index',
+      'bookings' => $this->bookings->getBookings($id),
+      'slots' => $this->model('Slot')
+    ]);
+  }
+
+  // update status 
+  public function status($id)
+  {
+    if ($this->bookings->updateStatus($id, $_POST['status'])) {
+      echo json_encode([
+        'status'  => 'success',
+        'message' =>  'Status updating successfully!',
+      ]);
+    } else {
+      echo json_encode([
+        'status'  => 'fails',
+        'message' =>  'Error updating status!'
+      ]);
+    }
+  }
+
+  public function reloadData()
+  {
+    $this->view('admin/booking/_tbody', [
+      'bookings' => $this->bookings->getBookings()
+    ]);
+  }
+
+  public function edit($id)
+  {
+    if (!$_SESSION['login']) $this->redirect('login', 'index');
+    $slots = $this->model('Slot');
+    $rooms = $this->model('Room');
+    $this->view('admin/layouts/master', [
+      'page' => 'booking/edit',
+      'slots'   => $slots->getSlots(),
+      'booking' => $this->bookings->getBookingById($id)->fetch_assoc(),
+      'rooms' => $rooms->getRooms()
+    ]);
+  }
+
+  public function update($id)
+  {
+    if (!$_SESSION['login']) $this->redirect('login', 'index');
+
+    $input = $this->getInput($_POST);
+    if (isset($_POST['update'])) {
+      if ($this->bookings->updateBooking($id, $input)) {
+        $_SESSION['status'] = 'success';
+        $this->redirect('booking', 'list');
+      } else {
+        $_SESSION['status'] = 'error';
+        $this->redirect('booking', 'list');
+      }
+    }
+  }
+
+  public function delete($id)
+  {
+    if ($this->bookings->deleteBooking($id)) {
+      echo json_encode([
+        'status'  => 'success',
+        'message' =>  'Record deleted successfully!',
+      ]);
+    } else {
+      echo json_encode([
+        'status'  => 'fails',
+        'message' =>  'Error deleting record!'
+      ]);
+    }
+  }
 }

@@ -12,7 +12,7 @@ class Slot extends Database
   }
 
   public function getSlotByIds($ids){
-    if($ids !== ''){
+    if($ids !== null){
       $sql = "SELECT * FROM " . $this->table . " WHERE id IN ($ids)";
       return $this->connection->query($sql);
     }

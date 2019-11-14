@@ -5,10 +5,15 @@
     </li>
   </ul>
   <ul class="navbar-nav ml-auto">
-    <li class="nav-item">
-      <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
-        <i class="fas fa-th-large"></i>
-      </a>
+    <li class="nav-item dropdown">
+      <button class="btn nav-link" data-toggle="dropdown">
+        <i class="fas fa-cog"></i>
+      </button>
+      <div class="dropdown-menu dropdown-menu-right">
+        <a href="<?= ROOT_URL ?>/login/logout" class="dropdown-item">
+          <i class="fas fa-sign-out-alt mr-2"></i> Logout
+        </a>
+      </div>
     </li>
   </ul>
 </nav>
