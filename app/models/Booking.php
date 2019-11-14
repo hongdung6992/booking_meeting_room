@@ -73,4 +73,12 @@ class Booking extends Database
     $sql = "DELETE FROM " . $this->table . " WHERE id = " . $id;
     return $this->connection->query($sql);
   }
+
+  public function getRoomBooked($date)
+  {
+    if (isset($date)) {
+      $sql = "SELECT room_id FROM bookings WHERE date = $date GROUP BY room_id";
+    }
+    return $this->connection->query($sql);
+  }
 }

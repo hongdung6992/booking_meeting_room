@@ -4,9 +4,14 @@ class Room extends Database
 {
   public $table = 'rooms';
 
-  function getRooms()
+  function getRooms($status = null)
   {
-    $sql = "SELECT * FROM " . $this->table;
+    if($status !== null){
+      $sql = "SELECT * FROM " . $this->table . " WHERE status = $status";
+    }else{
+      $sql = "SELECT * FROM " . $this->table;
+    }
+    
     return $this->connection->query($sql);
   }
 
@@ -18,13 +23,9 @@ class Room extends Database
     }
   }
 
-  function countRoomByStatus($status = null)
+  function countRoom()
   {
-    if ($status !== null) {
-      $sql = "SELECT count(*) as amount FROM " . $this->table . " WHERE status = $status";
-    } else {
-      $sql = "SELECT count(*) as amount FROM " . $this->table;
-    }
+    $sql = "SELECT count(*) as amount FROM " . $this->table;
     return $this->connection->query($sql)->fetch_assoc();
   }
 }

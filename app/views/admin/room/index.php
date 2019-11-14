@@ -1,3 +1,14 @@
+<form method="POST" action="<?= ROOT_URL ?>/room/index" class="d-block">
+  <div class="row mb-3">
+    <div class="col-md-3">
+      <input type="text" name="date" class="form-control reservation" value="<?= isset($_POST['date']) ? $_POST['date'] : date('d/m/Y') ?>">
+    </div>
+    <div class="col-md-1">
+      <input type="submit" class="btn btn-primary" value="Search">
+    </div>
+  </div>
+</form>
+
 <?php include_once '_count.php' ?>
 <div class="row">
   <div class="col-12">

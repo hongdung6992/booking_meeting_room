@@ -8,7 +8,7 @@ class HomeController extends Controller
     $slots = $this->model('Slot');
     $this->view('client/layouts/master', [
       'page'  => '/home/index',
-      'rooms' => $rooms->getRooms(),
+      'rooms' => $rooms->getRooms(1),
       'slots' => $slots->getSlots()
     ]);
 

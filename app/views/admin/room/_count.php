@@ -15,7 +15,7 @@
 
       <div class="info-box-content">
         <span class="info-box-text">Empty meeting rooms</span>
-        <span class="info-box-number"><?= $data['count']['empty']['amount'] ?></span>
+        <span class="info-box-number"><?= $data['count']['empty'] ?></span>
       </div>
     </div>
   </div>
@@ -27,7 +27,7 @@
 
       <div class="info-box-content">
         <span class="info-box-text">Meeting rooms booked</span>
-        <span class="info-box-number"><?= $data['count']['booked']['amount'] ?></span>
+        <span class="info-box-number"><?= $data['count']['booked'] ?></span>
       </div>
     </div>
   </div>

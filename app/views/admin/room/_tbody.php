@@ -3,8 +3,8 @@ if ($data['rooms']->num_rows > 0) {
   $index = 0;
   while ($room = $data['rooms']->fetch_assoc()) {
     $index++;
-    $status = $room['status'] == 0 ? 'Empty' : 'Booking';
-    $class  = $room['status'] == 0 ? 'danger' : 'success';
+    $status = $room['status'] == 0 ? 'Inactive' : 'Active';
+    $class  = $room['status'] == 0 ? 'secondary' : 'success';
     ?>
     <tr>
       <td class="text-center"><?= $index ?></td>
