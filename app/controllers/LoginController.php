@@ -13,7 +13,7 @@ class LoginController extends Controller
   public function index()
   {
     $this->view('login/index');
-    if (isset($_SESSION['login']) && $_SESSION['login']) $this->redirect('room', 'index');
+    if (isset($_SESSION['login'])) $this->redirect('room', 'index');
 
     $this->destroySession();
   }
